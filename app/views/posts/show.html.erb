@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @post.author %>
+</p>
+
+<p>
+  <strong>Blog entry:</strong>
+  <%= @post.blog_entry %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+
+<%= link_to 'Back', posts_path %>
+
+<br />
+<h4>Comments:</h4>
+
+<div id="comments">
+	<%= render 'comments/form', comment: @comment %>
+
+	<br />
+
+<h4>What everyone else is saying:</h4>
+
+	<% @post.comments.each do |c| %>
+		<p>
+			<%= c.author %> said... <br />
+			<%= c.comment_entry %>
+		</p>
+		<% end %>
+</div>
+
+
