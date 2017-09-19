@@ -14,8 +14,15 @@
   <body>
   	
 <ol class="breadcrumb">
+  <div class="pull-left"><li id="badge"> The Everyday Hipster</li></div>
+  <% if user_signed_in? %>
+  <p id="hello">Signed in as <%= current_user.email %></p>
   <li id="nav"><%= link_to 'Home', posts_path %></li>
   <li id="nav"><%= link_to 'New Post', new_post_path %></li>
+  <li id="nav">
+  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+  <% end %>
+  </li>
 </ol>
 
     <div class="container">
