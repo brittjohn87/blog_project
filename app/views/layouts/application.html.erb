@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BlogProject</title>
+    <title>B's Blog Spot</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fugaz+One" rel="stylesheet">
+  
   </head>
 
   <body>
-  	<div class="container">
+  	
+<ol class="breadcrumb">
+  <li id="nav"><%= link_to 'Home', posts_path %></li>
+  <li id="nav"><%= link_to 'New Post', new_post_path %></li>
+</ol>
+
+    <div class="container">
     <%= yield %>
     </div>
   </body>

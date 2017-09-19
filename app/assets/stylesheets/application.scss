@@ -16,3 +16,48 @@
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+
+h1 {
+	font-family: 'Fugaz One', cursive;
+	color: white;
+}
+
+h3 {
+	font-family: 'Fugaz One', cursive;
+	color: white;
+}
+
+h4 {
+	font-family: 'Fugaz One', cursive;
+	color: white;
+}
+
+.panel-body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+.form-group {
+	font-family: 'Montserrat', sans-serif;
+	color: white;
+}
+
+.breadcrumb {
+	text-align: right;
+	background-color: #d6423b;
+
+}
+
+#nav {
+	font-family: 'Fugaz One', sans-serif;
+	font-size: 20px;
+}
+
+body {
+	background-color: #b41039;
+}
+
+img {
+	height: 100px;
+	width: 100px;
+}
+
