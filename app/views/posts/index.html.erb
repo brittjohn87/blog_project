@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<center><h1><img src="http://hellogiggles.com/wp-content/themes/hg/images/illustrations/5.png"> The Everyday Hipster <img src="https://cdn.pixabay.com/photo/2017/06/29/00/15/keywords-2452664_1280.png"></h1></center>
+<center><h1><img id="front_pic" src="http://hellogiggles.com/wp-content/themes/hg/images/illustrations/5.png"> The Everyday Hipster <img id="front_pic" src="https://cdn.pixabay.com/photo/2017/06/29/00/15/keywords-2452664_1280.png"></h1></center>
 
 <h3>Recent Posts...</h3>
 
@@ -8,21 +8,26 @@
 <% @posts.each do |post| %>
   <div class="panel panel-info">
       <div class="panel-heading">
-      <h3 class="panel-title">Title: <%= post.title %> <br /> Author: <%= post.user.email %> <br /> Created On: <%= post.created_at.strftime("%B %e, %Y at %l:%M %p") %></h3>
+      <div class="pull-right"><%= image_tag post.user.avatar.thumb %></div>
+      <h3 class="panel-title">Title: <%= post.title %> <br /> Author: <%= link_to post.user.username, user_posts_path(name: post.user.username) %> <br /> Created On: <%= post.created_at.strftime("%B %e, %Y at %l:%M %p") %></h3>
       </div>
         <div class="panel-body">
-            <%= post.blog_entry %>
+            <%= post.blog_entry.html_safe %>
             <br />
             <br />
 
             <div class="btn-group" role="group" aria-label="...">
               <button type="button" class="btn btn-info"><%= link_to 'Show', post %></button>
+              <% if current_user.id == post.user_id %>
               <button type="button" class="btn btn-warning"><%= link_to 'Edit', edit_post_path(post) %></button>
               <button type="button" class="btn btn-danger"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+              <% end %>
             </div>
         </div>
   </div>
 <% end %>
+
+<div class="pull-right"><%= paginate @posts %></div>
 
 <br>
 

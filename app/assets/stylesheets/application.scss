@@ -29,7 +29,7 @@ h3 {
 
 h4 {
 	font-family: 'Fugaz One', cursive;
-	color: white;
+	color: black;
 }
 
 .panel-body {
@@ -44,7 +44,6 @@ h4 {
 .breadcrumb {
 	text-align: right;
 	background-color: #d6423b;
-
 }
 
 #nav {
@@ -56,7 +55,7 @@ body {
 	background-color: #b41039;
 }
 
-img {
+#front_pic {
 	height: 100px;
 	width: 100px;
 }
@@ -76,5 +75,10 @@ img {
 #bold {
 	font-weight: bold;
 	font-style: italic;
+}
+
+#bearded_man {
+	height: 30px;
+	width: 30px;
 }
 
